@@ -25,14 +25,12 @@
 | Column              | Type       | Options                      |
 | ------------------- | ---------- | ---------------------------- |
 | name                | string     | null:false                   |
-| explanation         | text       | null:false                   |
-| category_id         | integer    | null:false                   |
-| item_status         | integer    | null:false                   |
-| action_status       | integer    | null:false                   |
-| delivery_fee        | integer    | null:false                   |
-| shopping_origin     | integer    | null:false                   |
-| days_until_shopping | integer    | null:false                   |
-| exhibition_price    | integer    | null:false                   |
+| detail              | text       | null:false                   |
+| category            | integer    | null:false                   |
+| quality             | integer    | null:false                   |
+| delivery_cost       | integer    | null:false                   |
+| delivery_day        | integer    | null:false                   |
+| price               | integer    | null:false                   |
 | user_id             | integer    | null:false  foreign_key:true |
 
   Association
