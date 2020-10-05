@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :items
+  has_one :address
+  has_one :order
     
     VALID_PASSWORD_0 =/\A[a-zA-Z0-9]+\z/
     validates :password, 
