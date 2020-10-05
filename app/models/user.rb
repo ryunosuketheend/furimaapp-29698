@@ -3,10 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
   has_many :items
-  has_one :address
-  has_one :order
+  has_many :orders
     
     VALID_PASSWORD_0 =/\A[a-zA-Z0-9]+\z/
     validates :password, 
