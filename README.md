@@ -16,8 +16,7 @@
   Association
 
 - has_many :items
-- has_many :comments
-- has_many :purchases
+- has_many :orders
 
 
   items table
@@ -32,50 +31,37 @@
 | delivery_day        | integer    | null:false                   |
 | price               | integer    | null:false                   |
 | user_id             | integer    | null:false  foreign_key:true |
+| region_id           | integer    | null:false                   |
 
   Association
 
 - belongs_to :user
-- has_many   :comments
-- has_one    :purchase
+- has_one    :order
 
 
-  address table
+  addresses table
 
 | Column        | Type       | Options                      |
 | ------------- | ---------- | ---------------------------- |
-| purchase      | references | null:false  foreign_key:true |
+| order         | references | null:false  foreign_key:true |
 | postal_code   | string     | null:false                   |
-| prefecture    | integer    | null:false                   |
+| region_id     | integer    | null:false                   |
 | city          | string     | null:false                   |
 | building_name | string     |                              |
-| phone_number  | integer    | null:false                   |
+| phone_number  | string     | null:false                   |
 | house_number  | string     | null:false                   |
 
   Association
 
-- belongs_to :purchase
-
-  comments table
-
-| Column  | Type       | Options                      |
-| ------- | ---------- | ---------------------------- |
-| comment | text       | null:false                   |
-| user    | references | null:false  foreign_key_true |
-| item    | references | null:false  foreign_key_true |
-
-  Association
-
-- belongs_to :user
-- belongs_to :item
+- belongs_to :order
 
 
- purchase table
+ orders table
 
  | Column  | Type       | Options                      |
  | ------- | ---------- | ---------------------------- |
- | user    | references | null:false  foreign_key_true |
- | item    | references | null:false  foreign_key_true |
+ | user    | references | null:false  foreign_key:true |
+ | item    | references | null:false  foreign_key:true |
 
   Association
 
